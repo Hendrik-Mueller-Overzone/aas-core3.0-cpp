@@ -22,24 +22,24 @@ set(PROJECT_VERSION ${AAS_CORE3_VERSION})
 
 OPTION(BUILD_TESTS "Build tests for aas-core-cpp" FALSE)
 
+OPTION(AAS_XML_ENABLE "Enable XMLization" OFF)
+OPTION(AAS_JSON_ENABLE "Enable JSONization" ON)
+set(CMAKE_CXX_STANDARD 23)
 if (${BUILD_TESTS})
     # NOTE (mristin):
     # We need to use C++17 for the <filesystem> in tests.
     set(CMAKE_CXX_STANDARD 17)
-else ()
-    set(CMAKE_CXX_STANDARD 11)
 endif ()
 
-# NOTE (mristin):
-# See: https://crascit.com/2015/03/28/enabling-cxx11-in-cmake/
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+if (AAS_JSON_ENABLE)
+    message("Including JSONization")
+    find_package(nlohmann_json 3 CONFIG REQUIRED)
+endif ()
 
-
-find_package(nlohmann_json 3 CONFIG REQUIRED)
-find_package(expat 2 CONFIG REQUIRED)
-find_package(tl-optional 1 CONFIG REQUIRED)
-find_package(tl-expected 1 CONFIG REQUIRED)
+if (AAS_XML_ENABLE)
+    message("Including XMLization")
+    find_package(expat 2 CONFIG REQUIRED)
+endif ()
 
 # NOTE (mristin):
 # Since there is a lot of source code, we have to compile to large object files
@@ -74,7 +74,6 @@ SET(HEADER
         ${HEADER_PATH}/constants.hpp
         ${HEADER_PATH}/enhancing.hpp
         ${HEADER_PATH}/iteration.hpp
-        ${HEADER_PATH}/jsonization.hpp
         ${HEADER_PATH}/pattern.hpp
         ${HEADER_PATH}/revm.hpp
         ${HEADER_PATH}/stringification.hpp
@@ -82,7 +81,6 @@ SET(HEADER
         ${HEADER_PATH}/verification.hpp
         ${HEADER_PATH}/visitation.hpp
         ${HEADER_PATH}/wstringification.hpp
-        ${HEADER_PATH}/xmlization.hpp
         )
 
 SET(SRC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src")
@@ -90,7 +88,6 @@ SET(SRC
         ${SRC_PATH}/common.cpp
         ${SRC_PATH}/constants.cpp
         ${SRC_PATH}/iteration.cpp
-        ${SRC_PATH}/jsonization.cpp
         ${SRC_PATH}/pattern.cpp
         ${SRC_PATH}/revm.cpp
         ${SRC_PATH}/stringification.cpp
@@ -98,8 +95,22 @@ SET(SRC
         ${SRC_PATH}/verification.cpp
         ${SRC_PATH}/visitation.cpp
         ${SRC_PATH}/wstringification.cpp
-        ${SRC_PATH}/xmlization.cpp
         )
+
+set(PRIVATE_LINK_LIBS)
+set(PUBLIC_LINK_LIBS)
+
+if(AAS_JSON_ENABLE)
+    list(APPEND SRC ${SRC_PATH}/jsonization.cpp)
+    list(APPEND HEADER ${HEADER_PATH}/jsonization.hpp)
+    list(APPEND PUBLIC_LINK_LIBS nlohmann_json::nlohmann_json)
+endif ()
+
+if(AAS_XML_ENABLE)
+    list(APPEND SRC ${SRC_PATH}/xmlization.cpp)
+    list(APPEND HEADER ${HEADER_PATH}/xmlization.hpp)
+    list(APPEND PRIVATE_LINK_LIBS expat::expat)
+endif ()
 
 # NOTE (mristin)
 # MSVC does not automatically build .lib for DLLs.
@@ -121,11 +132,9 @@ target_include_directories(aas_core3_static
         )
 target_link_libraries(aas_core3_static
         PRIVATE
-        expat::expat
+        ${PRIVATE_LINK_LIBS}
         PUBLIC
-        nlohmann_json::nlohmann_json
-        tl::optional
-        tl::expected
+        ${PUBLIC_LINK_LIBS}
         )
 
 add_library(aas_core3 SHARED ${HEADER} ${SRC})
@@ -144,21 +153,13 @@ set_target_properties(aas_core3
         )
 target_link_libraries(aas_core3
         PRIVATE
-        expat::expat
+        ${PRIVATE_LINK_LIBS}
         PUBLIC
-        nlohmann_json::nlohmann_json
-        tl::optional
-        tl::expected
+        ${PUBLIC_LINK_LIBS}
         )
 
 # Testing
-OPTION(BUILD_TESTS "Build tests for aas-core-cpp" FALSE)
-
 if (${BUILD_TESTS})
-    # NOTE (mristin):
-    # We need to use C++17 for the <filesystem>.
-    set(CMAKE_CXX_STANDARD 17)
-
     include(CTest)
     enable_testing()
 
@@ -168,17 +169,21 @@ if (${BUILD_TESTS})
     add_library(common_in_test test/common.hpp test/common.cpp)
     target_link_libraries(common_in_test aas_core3_static)
 
-    add_library(common_jsonization_in_test
-            test/common_jsonization.cpp
-            test/common_jsonization.hpp
-            )
-    target_link_libraries(common_jsonization_in_test aas_core3_static)
+    if (AAS_JSON_ENABLE)
+        add_library(common_jsonization_in_test
+                test/common_jsonization.cpp
+                test/common_jsonization.hpp
+                )
+        target_link_libraries(common_jsonization_in_test aas_core3_static)
+    endif ()
 
-    add_library(common_xmlization_in_test
-            test/common_xmlization.cpp
-            test/common_xmlization.hpp
-            )
-    target_link_libraries(common_xmlization_in_test aas_core3_static)
+    if (AAS_XML_ENABLE)
+        add_library(common_xmlization_in_test
+                test/common_xmlization.cpp
+                test/common_xmlization.hpp
+                )
+        target_link_libraries(common_xmlization_in_test aas_core3_static)
+    endif ()
 
     add_library(common_examples_in_test
             test/common_examples.generated.hpp
@@ -239,97 +244,101 @@ if (${BUILD_TESTS})
     # endregion Wstringification
 
     # region Jsonization
-    add_executable(
-            test_jsonization_of_concrete_classes
-            test/test_jsonization_of_concrete_classes.generated.cpp
-    )
-    target_link_libraries(
-            test_jsonization_of_concrete_classes
-            aas_core3_static
-            common_in_test
-            common_jsonization_in_test
-    )
-    add_test(
-            NAME test_jsonization_of_concrete_classes
-            COMMAND $<TARGET_FILE:test_jsonization_of_concrete_classes>
-    )
+    if (AAS_JSON_ENABLE)
+        add_executable(
+                test_jsonization_of_concrete_classes
+                test/test_jsonization_of_concrete_classes.generated.cpp
+        )
+        target_link_libraries(
+                test_jsonization_of_concrete_classes
+                aas_core3_static
+                common_in_test
+                common_jsonization_in_test
+        )
+        add_test(
+                NAME test_jsonization_of_concrete_classes
+                COMMAND $<TARGET_FILE:test_jsonization_of_concrete_classes>
+        )
 
-    add_executable(
-            test_jsonization_dispatch
-            test/test_jsonization_dispatch.generated.cpp
-    )
-    target_link_libraries(
-            test_jsonization_dispatch
-            aas_core3_static
-            common_examples_in_test
-            common_jsonization_in_test
-    )
-    add_test(
-            NAME test_jsonization_dispatch
-            COMMAND $<TARGET_FILE:test_jsonization_dispatch>
-    )
+        add_executable(
+                test_jsonization_dispatch
+                test/test_jsonization_dispatch.generated.cpp
+        )
+        target_link_libraries(
+                test_jsonization_dispatch
+                aas_core3_static
+                common_examples_in_test
+                common_jsonization_in_test
+        )
+        add_test(
+                NAME test_jsonization_dispatch
+                COMMAND $<TARGET_FILE:test_jsonization_dispatch>
+        )
 
-    add_executable(
-            test_jsonization_of_concrete_classes_outside_container
-            test/test_jsonization_of_concrete_classes_outside_container.generated.cpp
-    )
-    target_link_libraries(
-            test_jsonization_of_concrete_classes_outside_container
-            aas_core3_static
-            common_examples_in_test
-            common_jsonization_in_test
-    )
-    add_test(
-            NAME test_jsonization_of_concrete_classes_outside_container
-            COMMAND $<TARGET_FILE:test_jsonization_of_concrete_classes_outside_container>
-    )
+        add_executable(
+                test_jsonization_of_concrete_classes_outside_container
+                test/test_jsonization_of_concrete_classes_outside_container.generated.cpp
+        )
+        target_link_libraries(
+                test_jsonization_of_concrete_classes_outside_container
+                aas_core3_static
+                common_examples_in_test
+                common_jsonization_in_test
+        )
+        add_test(
+                NAME test_jsonization_of_concrete_classes_outside_container
+                COMMAND $<TARGET_FILE:test_jsonization_of_concrete_classes_outside_container>
+        )
+    endif ()
     # endregion
 
     # region Xmlization
-    add_executable(
-            test_xmlization_of_concrete_classes
-            test/test_xmlization_of_concrete_classes.generated.cpp
-    )
-    target_link_libraries(
-            test_xmlization_of_concrete_classes
-            aas_core3_static
-            common_in_test
-            common_xmlization_in_test
-    )
-    add_test(
-            NAME test_xmlization_of_concrete_classes
-            COMMAND $<TARGET_FILE:test_xmlization_of_concrete_classes>
-    )
+    if(AAS_XML_ENABLE)
+        add_executable(
+                test_xmlization_of_concrete_classes
+                test/test_xmlization_of_concrete_classes.generated.cpp
+        )
+        target_link_libraries(
+                test_xmlization_of_concrete_classes
+                aas_core3_static
+                common_in_test
+                common_xmlization_in_test
+        )
+        add_test(
+                NAME test_xmlization_of_concrete_classes
+                COMMAND $<TARGET_FILE:test_xmlization_of_concrete_classes>
+        )
 
-    add_executable(
-            test_xmlization_dispatch
-            test/test_xmlization_dispatch.generated.cpp
-    )
-    target_link_libraries(
-            test_xmlization_dispatch
-            aas_core3_static
-            common_in_test
-            common_examples_in_test
-    )
-    add_test(
-            NAME test_xmlization_dispatch
-            COMMAND $<TARGET_FILE:test_xmlization_dispatch>
-    )
+        add_executable(
+                test_xmlization_dispatch
+                test/test_xmlization_dispatch.generated.cpp
+        )
+        target_link_libraries(
+                test_xmlization_dispatch
+                aas_core3_static
+                common_in_test
+                common_examples_in_test
+        )
+        add_test(
+                NAME test_xmlization_dispatch
+                COMMAND $<TARGET_FILE:test_xmlization_dispatch>
+        )
 
-    add_executable(
-            test_xmlization_of_concrete_classes_outside_container
-            test/test_xmlization_of_concrete_classes_outside_container.generated.cpp
-    )
-    target_link_libraries(
-            test_xmlization_of_concrete_classes_outside_container
-            aas_core3_static
-            common_in_test
-            common_examples_in_test
-    )
-    add_test(
-            NAME test_xmlization_of_concrete_classes_outside_container
-            COMMAND $<TARGET_FILE:test_xmlization_of_concrete_classes_outside_container>
-    )
+        add_executable(
+                test_xmlization_of_concrete_classes_outside_container
+                test/test_xmlization_of_concrete_classes_outside_container.generated.cpp
+        )
+        target_link_libraries(
+                test_xmlization_of_concrete_classes_outside_container
+                aas_core3_static
+                common_in_test
+                common_examples_in_test
+        )
+        add_test(
+                NAME test_xmlization_of_concrete_classes_outside_container
+                COMMAND $<TARGET_FILE:test_xmlization_of_concrete_classes_outside_container>
+        )
+    endif ()
     # endregion
 
     # region Verification

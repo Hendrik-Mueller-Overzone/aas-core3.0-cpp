@@ -25611,7 +25611,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25648,7 +25648,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25683,7 +25683,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25718,7 +25718,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25753,7 +25753,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25788,7 +25788,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25823,7 +25823,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25860,7 +25860,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25895,7 +25895,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25932,7 +25932,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -25969,7 +25969,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26004,7 +26004,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26039,7 +26039,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26076,7 +26076,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26113,7 +26113,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26148,7 +26148,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26183,7 +26183,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26220,7 +26220,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26257,7 +26257,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26292,7 +26292,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26329,7 +26329,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26366,7 +26366,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26403,7 +26403,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26440,7 +26440,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26477,7 +26477,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26514,7 +26514,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26551,7 +26551,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26588,7 +26588,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26623,7 +26623,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26658,7 +26658,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26695,7 +26695,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26732,7 +26732,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26767,7 +26767,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26804,7 +26804,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26841,7 +26841,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26876,7 +26876,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26911,7 +26911,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26946,7 +26946,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -26983,7 +26983,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27020,7 +27020,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27055,7 +27055,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27090,7 +27090,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27125,7 +27125,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27160,7 +27160,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27195,7 +27195,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27230,7 +27230,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27267,7 +27267,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27304,7 +27304,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27341,7 +27341,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }
@@ -27378,7 +27378,7 @@ common::expected<
       "Unexpected null error when null instance."
     );
   }
-  return common::make_unexpected(
+  return common::unexpected(
     std::move(*error)
   );
 }

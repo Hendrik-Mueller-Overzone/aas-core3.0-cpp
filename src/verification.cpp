@@ -25155,6 +25155,13 @@ const Iterator& RecursiveVerification::end() const {
 // region struct Iterator
 
 Iterator::Iterator(
+        std::unique_ptr<impl::IVerificator> verificator
+) :
+verificator_(std::move(verificator)) {
+    // Intentionally empty.
+}
+
+Iterator::Iterator(
   const Iterator& other
 ) :
   verificator_(other.verificator_->Clone()) {

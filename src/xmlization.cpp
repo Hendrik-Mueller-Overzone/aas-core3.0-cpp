@@ -33797,7 +33797,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -33814,21 +33814,21 @@ common::expected<
   ) = ClassFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -33847,7 +33847,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -33864,21 +33864,21 @@ common::expected<
   ) = HasSemanticsFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -33897,7 +33897,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -33914,21 +33914,21 @@ common::expected<
   ) = ExtensionFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -33947,7 +33947,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -33964,21 +33964,21 @@ common::expected<
   ) = HasExtensionsFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -33997,7 +33997,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34014,21 +34014,21 @@ common::expected<
   ) = ReferableFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34047,7 +34047,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34064,21 +34064,21 @@ common::expected<
   ) = IdentifiableFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34097,7 +34097,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34114,21 +34114,21 @@ common::expected<
   ) = HasKindFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34147,7 +34147,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34164,21 +34164,21 @@ common::expected<
   ) = HasDataSpecificationFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34197,7 +34197,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34214,21 +34214,21 @@ common::expected<
   ) = AdministrativeInformationFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34247,7 +34247,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34264,21 +34264,21 @@ common::expected<
   ) = QualifiableFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34297,7 +34297,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34314,21 +34314,21 @@ common::expected<
   ) = QualifierFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34347,7 +34347,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34364,21 +34364,21 @@ common::expected<
   ) = AssetAdministrationShellFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34397,7 +34397,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34414,21 +34414,21 @@ common::expected<
   ) = AssetInformationFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34447,7 +34447,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34464,21 +34464,21 @@ common::expected<
   ) = ResourceFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34497,7 +34497,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34514,21 +34514,21 @@ common::expected<
   ) = SpecificAssetIdFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34547,7 +34547,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34564,21 +34564,21 @@ common::expected<
   ) = SubmodelFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34597,7 +34597,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34614,21 +34614,21 @@ common::expected<
   ) = SubmodelElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34647,7 +34647,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34664,21 +34664,21 @@ common::expected<
   ) = RelationshipElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34697,7 +34697,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34714,21 +34714,21 @@ common::expected<
   ) = SubmodelElementListFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34747,7 +34747,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34764,21 +34764,21 @@ common::expected<
   ) = SubmodelElementCollectionFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34797,7 +34797,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34814,21 +34814,21 @@ common::expected<
   ) = DataElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34847,7 +34847,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34864,21 +34864,21 @@ common::expected<
   ) = PropertyFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34897,7 +34897,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34914,21 +34914,21 @@ common::expected<
   ) = MultiLanguagePropertyFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34947,7 +34947,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -34964,21 +34964,21 @@ common::expected<
   ) = RangeFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -34997,7 +34997,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35014,21 +35014,21 @@ common::expected<
   ) = ReferenceElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35047,7 +35047,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35064,21 +35064,21 @@ common::expected<
   ) = BlobFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35097,7 +35097,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35114,21 +35114,21 @@ common::expected<
   ) = FileFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35147,7 +35147,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35164,21 +35164,21 @@ common::expected<
   ) = AnnotatedRelationshipElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35197,7 +35197,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35214,21 +35214,21 @@ common::expected<
   ) = EntityFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35247,7 +35247,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35264,21 +35264,21 @@ common::expected<
   ) = EventPayloadFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35297,7 +35297,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35314,21 +35314,21 @@ common::expected<
   ) = EventElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35347,7 +35347,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35364,21 +35364,21 @@ common::expected<
   ) = BasicEventElementFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35397,7 +35397,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35414,21 +35414,21 @@ common::expected<
   ) = OperationFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35447,7 +35447,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35464,21 +35464,21 @@ common::expected<
   ) = OperationVariableFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35497,7 +35497,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35514,21 +35514,21 @@ common::expected<
   ) = CapabilityFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35547,7 +35547,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35564,21 +35564,21 @@ common::expected<
   ) = ConceptDescriptionFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35597,7 +35597,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35614,21 +35614,21 @@ common::expected<
   ) = ReferenceFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35647,7 +35647,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35664,21 +35664,21 @@ common::expected<
   ) = KeyFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35697,7 +35697,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35714,21 +35714,21 @@ common::expected<
   ) = AbstractLangStringFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35747,7 +35747,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35764,21 +35764,21 @@ common::expected<
   ) = LangStringNameTypeFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35797,7 +35797,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35814,21 +35814,21 @@ common::expected<
   ) = LangStringTextTypeFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35847,7 +35847,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35864,21 +35864,21 @@ common::expected<
   ) = EnvironmentFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35897,7 +35897,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35914,21 +35914,21 @@ common::expected<
   ) = DataSpecificationContentFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35947,7 +35947,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -35964,21 +35964,21 @@ common::expected<
   ) = EmbeddedDataSpecificationFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -35997,7 +35997,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36014,21 +36014,21 @@ common::expected<
   ) = LevelTypeFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36047,7 +36047,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36064,21 +36064,21 @@ common::expected<
   ) = ValueReferencePairFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36097,7 +36097,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36114,21 +36114,21 @@ common::expected<
   ) = ValueListFromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36147,7 +36147,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36164,21 +36164,21 @@ common::expected<
   ) = LangStringPreferredNameTypeIec61360FromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36197,7 +36197,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36214,21 +36214,21 @@ common::expected<
   ) = LangStringShortNameTypeIec61360FromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36247,7 +36247,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36264,21 +36264,21 @@ common::expected<
   ) = LangStringDefinitionTypeIec61360FromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
@@ -36297,7 +36297,7 @@ common::expected<
 
   reader.Initialize();
   if (reader.node().kind() == NodeKind::Error) {
-    return common::make_unexpected(
+    return common::unexpected(
       DeserializationErrorFromReader(reader)
     );
   }
@@ -36314,21 +36314,21 @@ common::expected<
   ) = DataSpecificationIec61360FromElement(reader);
 
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = SkipWhitespace(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }
 
   error = CheckReaderAtEof(reader);
   if (error.has_value()) {
-    return common::make_unexpected(
+    return common::unexpected(
       std::move(*error)
     );
   }

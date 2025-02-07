@@ -82,14 +82,9 @@ class Iterator {
   using reference = const Error&;
 
  public:
-  explicit Iterator(
-    std::unique_ptr<impl::IVerificator> verificator
-  ) :
-  verificator_(std::move(verificator)) {
-      // Intentionally empty.
-  }
+  explicit Iterator(std::unique_ptr<impl::IVerificator> verificator);
 
-  Iterator(const Iterator& other);
+    Iterator(const Iterator& other);
   Iterator(Iterator&& other);
 
   Iterator& operator=(const Iterator& other);

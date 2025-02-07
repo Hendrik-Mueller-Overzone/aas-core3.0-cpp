@@ -68,7 +68,6 @@ using tl::make_optional;
 #if ((defined(_MSVC_LANG) && _MSVC_LANG > 202002L) || __cplusplus > 202002L)
 using std::expected;
 using std::unexpected;
-using std::make_unexpected;
 #else
 using tl::expected;
 using tl::unexpected;

@@ -1655,7 +1655,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
     const std::uint8_t encoded0 = kBase64Lookup[code0];
     if (encoded0 == 255) {
@@ -1670,7 +1670,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
 
     const unsigned char code1 = text[i + 1];
@@ -1686,7 +1686,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
     const std::uint8_t encoded1 = kBase64Lookup[code1];
     if (encoded1 == 255) {
@@ -1701,7 +1701,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
 
     // We map padding to 65, which is the value of "A".
@@ -1718,7 +1718,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
     const std::uint8_t encoded2 = kBase64Lookup[code2];
     if (encoded2 == 255) {
@@ -1733,7 +1733,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
 
     // We map padding to 65, which is the value of 'A'.
@@ -1750,7 +1750,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
     const std::uint8_t encoded3 = kBase64Lookup[code3];
     if (encoded3 == 255) {
@@ -1765,7 +1765,7 @@ common::expected<
         ")"
       );
 
-      return common::make_unexpected(message);
+      return common::unexpected(message);
     }
 
     if (pointer >= bytes_length) {
